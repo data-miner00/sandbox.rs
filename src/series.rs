@@ -14,6 +14,18 @@ pub fn generate_series(start: i32, for_len: i32) -> Vec<i32> {
     results
 }
 
+pub fn nth_term_at_series(a: i32, n: i32, d: i32) -> i32 {
+    a + (n - 1) * d
+}
+
+pub fn sum_of_ap(a: i32, n: i32, d: i32) -> i32 {
+    (n / 2) * ((2 * a) + ((n - 1) * d))
+}
+
+pub fn sum_of_ap_with_first_last(a: i32, n: i32, l: i32) -> i32 {
+    (n / 2) * ( a + l)
+}
+
 pub fn pretty_print(v: &Vec<i32>) -> String {
     let mut str: String = String::new();
     for i in 0..v.len() {

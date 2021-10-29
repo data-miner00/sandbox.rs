@@ -1,61 +1,30 @@
-use std::collections::HashMap;
+// use std::io;
+// use std::fs::File;
+// use std::io::prelude::*;
+
+// fn main() -> io::Result<()> {
+
+//     let mut f = File::open("src/models.rs")?;
+//     let mut buffer = [0; 10];
+
+//     let n = f.read(&mut buffer)?;
+
+//     println!("The bytes: {:?}", &buffer[..n]);
+//     Ok(())
+// }
+
+fn foo(input: Option<i32>) -> Option<i32> {
+    match input {
+        Some(i) if i >= 0 => Some(i),
+        _ => None
+    }
+}
 
 fn main() {
+    let resutl = match foo(Some(41)) {
+        Some(i) => i,
+        None => -999
+    };
 
-    let ints: Vec<i32> = vec![34, 53, 543, 23, 34];
-
-    println!("mean: {} \nmedian: {}\nmode: {}",
-             mean(&ints),
-             median(&ints),
-             mode(&ints));
-
-    println!("{}", pig_latinify("whatthehell"));
-    println!("{}", pig_latinify("apple"));
-}
-
-fn median(vec: &Vec<i32>) -> i32 {
-    let mid: usize = vec.len() / 2;
-
-    *vec.get(mid).unwrap()
-}
-
-fn mean(vec: &Vec<i32>) -> i32 {
-    let len = vec.len() as i32;
-    let mut accumulator: i32 = 0;
-
-    for i in vec {
-        accumulator += i;
-    }
-
-    accumulator / len
-}
-
-fn mode(vec: &Vec<i32>) -> i32 {
-    let mut map = HashMap::new();
-    let mut mode: i32 = 0;
-    let mut result: i32 = 0;
-
-    for i in vec {
-        let result = map.entry(i).or_insert(0);
-        *result += 1;
-    }
-
-    for (k, v) in map.iter() {
-        if *v > mode {
-            mode = *v;
-            result = **k;
-        }
-    }
-
-    result
-}
-
-fn pig_latinify(line: &str) -> String {
-    let mut letters = line.chars();
-    let first_letter = letters.next().unwrap();
-    let first_letter_lower = first_letter.to_lowercase().next().unwrap();
-    match first_letter_lower {
-        'a' | 'e' | 'i' | 'o' | 'u' => format!("{}-hay", letters.as_str()),
-        _ => format!("{}-{}ay", letters.as_str(), first_letter_lower)
-    }
+    println!("{}", resutl);
 }
