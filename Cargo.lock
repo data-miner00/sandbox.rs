@@ -1411,7 +1411,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "snake"
+name = "snakeproj"
 version = "0.1.0"
 dependencies = [
  "piston_window",
