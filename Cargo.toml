@@ -1,3 +1,19 @@
+[package]
+name = "sandbox"
+version = "0.1.0"
+edition = "2021"
+authors = [
+    "data-miner00 <mumkhong@skiff.com>"
+]
+description = "Personal sandbox project any everything Rust"
+license = "MIT"
+repository = "https://github.com/data-miner00/sandbox.rs.git"
+readme = "README.md"
+
+[[bin]]
+name = "sandbox"
+path = "./console/src/main.rs"
+
 [workspace]
 members = [
     "console",
