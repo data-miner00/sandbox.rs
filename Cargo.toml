@@ -19,5 +19,6 @@ members = [
     "console",
     "snake",
     "json_csv",
-    "common"
+    "common",
+    "pong"
 ]
