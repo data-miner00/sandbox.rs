@@ -20,5 +20,6 @@ members = [
     "snake",
     "json_csv",
     "common",
-    "pong"
+    "pong",
+    "simpgrep"
 ]
