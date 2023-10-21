@@ -22,5 +22,6 @@ members = [
     "common",
     "pong",
     "simpgrep",
-    "lisp"
+    "lisp",
+    "sierpinski"
 ]

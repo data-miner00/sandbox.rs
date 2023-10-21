@@ -1316,9 +1316,9 @@ dependencies = [
 
 [[package]]
 name = "image"
-version = "0.24.6"
+version = "0.24.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "527909aa81e20ac3a44803521443a765550f09b5130c2c2fa1ea59c2f8f50a3a"
+checksum = "6f3dfdbdd72063086ff443e297b61695500514b1e41095b6fb9a5ab48a70a711"
 dependencies = [
  "bytemuck",
  "byteorder",
@@ -1330,7 +1330,7 @@ dependencies = [
  "num-traits 0.2.16",
  "png 0.17.9",
  "qoi",
- "tiff 0.8.1",
+ "tiff 0.9.0",
 ]
 
 [[package]]
@@ -2233,7 +2233,7 @@ checksum = "2101faab6046f8514e4697701afc9084fb5175f5cc3ee6469be3ac29fe6b84ac"
 dependencies = [
  "gfx",
  "gfx_core",
- "image 0.24.6",
+ "image 0.24.7",
  "piston-texture",
 ]
 
@@ -3022,6 +3022,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "sierpinski"
+version = "0.1.0"
+dependencies = [
+ "image 0.24.7",
+ "rand 0.8.5",
+]
+
+[[package]]
 name = "simd-adler32"
 version = "0.3.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3313,9 +3321,9 @@ dependencies = [
 
 [[package]]
 name = "tiff"
-version = "0.8.1"
+version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7449334f9ff2baf290d55d73983a7d6fa15e01198faef72af07e2a8db851e471"
+checksum = "6d172b0f4d3fba17ba89811858b9d3d97f928aece846475bbda076ca46736211"
 dependencies = [
  "flate2",
  "jpeg-decoder 0.3.0",
