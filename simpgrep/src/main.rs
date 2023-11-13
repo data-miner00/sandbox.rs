@@ -7,9 +7,10 @@ use std::env;
 use std::error::Error;
 use std::fs;
 
+use crate::search::search_iter;
+
 fn main() -> Result<(), Box<dyn Error>> {
-    let args: Vec<String> = env::args().collect();
-    let config = Config::from_args(&args)?;
+    let config = Config::from_args(env::args())?;
 
     println!(
         "Searching for {}, in file {}",
@@ -20,6 +21,10 @@ fn main() -> Result<(), Box<dyn Error>> {
 
     for hit in search(&config.query, &contents, config.ignore_case) {
         println!("{}", hit);
+    }
+
+    for hit_iter in search_iter(&config.query, &contents, config.ignore_case) {
+        println!("{}", hit_iter);
     }
 
     Ok(())

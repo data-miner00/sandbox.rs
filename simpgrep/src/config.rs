@@ -7,13 +7,19 @@ pub struct Config {
 }
 
 impl Config {
-    pub fn from_args(args: &[String]) -> Result<Self, &'static str> {
-        if args.len() < 3 {
-            return Err("not enough arguments");
-        }
+    pub fn from_args(mut args: impl Iterator<Item = String>) -> Result<Self, &'static str> {
+        args.next(); // first unused arg
 
-        let query = args[1].to_owned();
-        let file_path = args[2].to_owned();
+        let query = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a query string"),
+        };
+
+        let file_path = match args.next() {
+            Some(arg) => arg,
+            None => return Err("Didn't get a file path"),
+        };
+
         let ignore_case = env::var("IGNORE_CASE").is_ok();
 
         Ok(Self {
