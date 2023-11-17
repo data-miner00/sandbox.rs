@@ -441,6 +441,9 @@ version = "0.1.0"
 [[package]]
 name = "console"
 version = "0.1.0"
+dependencies = [
+ "common",
+]
 
 [[package]]
 name = "core-foundation"
