@@ -5,6 +5,8 @@
 
 mod threading;
 
+pub use threading::usecase;
+
 #[derive(Clone)]
 pub struct Person {
     pub name: String,
