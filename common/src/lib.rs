@@ -17,6 +17,18 @@ impl Person {
     }
 }
 
+/// Adds an unsigned integer to another.
+/// 
+/// # Examples
+/// 
+/// ```
+/// let left: usize = 5;
+/// let right: usize = 8;
+/// 
+/// let answer = common::add(left, right);
+/// 
+/// assert_eq!(13, answer);
+/// ```
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
