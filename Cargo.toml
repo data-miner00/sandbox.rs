@@ -26,3 +26,7 @@ members = [
     "sierpinski",
     "mandelbrot"
 ]
+
+[workspace.dependencies]
+time = { version = "0.3.30", features = ["macros"] }
+regex = "1.10.2"
